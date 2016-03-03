@@ -1,0 +1,29 @@
+.apod {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.new-apod {
+    position: absolute;
+    z-index: 10;
+}
+
+.apod__media {
+    background-size: cover;
+    background-position: center center;
+}
+.apod__desc {
+    position: absolute;
+    z-index: 10;
+    top: 40px;
+    left: 10px;
+    color: #FFF;
+    text-shadow: 1px 1px #000;
+
+    p {
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" />
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Facebook Open Graph meta -->
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <title>backbone-tryout</title>
+
+    <!-- Included Font Files -->
+
+    <!-- Included CSS Files -->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+    <button class="new-apod">New Random Astronomy Picture of the Day</button>
+    <div class="main-container"></div>
+
+    <script id="tplApod" type="text/template">
+        <div class="apod">
+            <div class="apod apod__media" style="background-image:url('<%= image %>')"></div>
+            <div class="apod apod__desc">
+                <p>
+                    <%= title %>
+                </p>
+            </div>
+        </div>
+    </script>
+
+    <!-- Initialize JS Plugins/Shims -->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/underscore/underscore-min.js"></script>
+    <script src="./node_modules/backbone/backbone-min.js"></script>
+    <script src="./node_modules/backbone.localstorage/backbone.localstorage-min.js"></script>
+
+    <script src="./javascript/app.js"></script>
+
+    <script src="./javascript/router.js"></script>
+
+    <script src="./javascript/models/model.js"></script>
+
+    <script src="./javascript/collections/collection.js"></script>
+
+    <script src="./javascript/views/photo-item.js"></script>
+    <script src="./javascript/views/home.js"></script>
+
+</body>
+
+</html>
