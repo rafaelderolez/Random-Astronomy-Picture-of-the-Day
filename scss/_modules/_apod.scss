@@ -1,5 +1,4 @@
 .apod {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -12,14 +11,14 @@
 }
 
 .apod__media {
+    position: absolute;
+    z-index: 5;
     background-size: cover;
     background-position: center center;
 }
 .apod__desc {
-    position: absolute;
+    position: relative;
     z-index: 10;
-    top: 40px;
-    left: 10px;
     color: #FFF;
     text-shadow: 1px 1px #000;
 
