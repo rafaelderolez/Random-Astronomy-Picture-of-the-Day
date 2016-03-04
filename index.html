@@ -25,7 +25,22 @@
 
 <body>
     <button class="new-apod">New Random Astronomy Picture of the Day</button>
-    <div class="main-container"></div>
+    <div class="main-container">
+        <div class="apod">
+            <div class="apod apod__media" style="background-image:url('images/space.jpg')"></div>
+            <div class="apod apod__desc">
+                <p>
+                    Lorem ipsum dolor sit amet.
+                </p>
+                <p>
+                    Consectetur adipisicing elit. Autem iure nobis perspiciatis cum fugit itaque, deleniti, hic accusantium voluptates quas rerum nostrum eligendi ex molestias ipsa maiores doloribus facere quo.
+                </p>
+                <p>
+                    <%= title %>
+                </p>
+            </div>
+        </div>
+    </div>
 
     <script id="tplApod" type="text/template">
         <div class="apod">

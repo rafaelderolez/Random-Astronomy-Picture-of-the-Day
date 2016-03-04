@@ -1,13 +1,18 @@
 /**
  * Base ~ Type
  */
+$sans-serif-stack: "Helvetica Neue", Helvetica, Arial, sans-serif; // normal 100 400 600 800
 
+@mixin din($weight: normal, $style: normal) {
+    font-family: "Din Pro", $sans-serif-stack;
+    font-weight: $weight;
+    font-style: $style;
+}
 /**
  * Type variables
  */
 $base-font: sans-serif !default;
 $alt-font: sans-serif !default;
-
 /**
  * Type styles
  */
@@ -29,8 +34,8 @@ h5,
 h6,
 .h6,
 %h6 {
+    @include din(400, normal);
     margin: 14px 0;
-    font-family: $alt-font;
     font-weight: normal;
     font-style: normal;
     color: $heading-colour;

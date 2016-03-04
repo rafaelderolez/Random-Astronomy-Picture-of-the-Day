@@ -2,7 +2,7 @@
  * Base styles
  */
 html {
-    font-family: $base-font;
+    @include din(100, normal);
     font-size: 100%;
     $em-base: 16px;
     width: 100%;
