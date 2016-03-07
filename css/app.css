@@ -507,6 +507,10 @@ body {
   width: 100%;
   height: 100%; }
 
+.main-container {
+  width: 100%;
+  height: 100%; }
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -578,16 +582,16 @@ ul.no-list-style {
  * Put them inside "modules" folder
  */
 .apod {
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%; }
 
 .new-apod {
   position: absolute;
-  z-index: 10; }
+  z-index: 15; }
 
 .apod__media {
+  width: 100%;
+  height: 100%;
   position: absolute;
   z-index: 5;
   background-size: cover;
@@ -599,8 +603,7 @@ ul.no-list-style {
   line-height: 1.618;
   position: relative;
   z-index: 10;
-  color: #FFF;
-  text-shadow: 1px 1px #000; }
+  color: #FFF; }
   .apod__desc p {
     margin: 0 auto;
     font-weight: 100; }
@@ -728,13 +731,14 @@ footer {
   color: #FFF;
   bottom: 0;
   width: 100%;
-  display: block;
-  margin: 20px; }
+  display: block; }
   footer p {
     display: block;
     margin: 0; }
   footer .about {
     cursor: pointer; }
+  footer .inner {
+    padding: 20px; }
 
 /**
  * Plugin styles
@@ -2064,3 +2068,66 @@ footer {
 
 .fa-plus-square-o:before {
   content: ""; }
+
+/* DOCUMENT INFORMATION
+    - Glitch Effect
+    - Author: Marcel Leggane
+    - Source: http://codepen.io/marcellegane/pen/GoGVQe
+*/
+.glitch {
+  position: relative;
+  color: white;
+  mix-blend-mode: lighten; }
+  .glitch:before, .glitch:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: black;
+    clip: rect(0, 0, 0, 0); }
+  .glitch:before {
+    left: -1px;
+    text-shadow: 1px 0 rgba(255, 0, 0, 0.7); }
+  .glitch:after {
+    left: 1px;
+    text-shadow: -1px 0 rgba(0, 0, 255, 0.7); }
+  .glitch:hover:before {
+    text-shadow: 4px 0 rgba(255, 0, 0, 0.7);
+    animation: glitch-loop-1 0.8s infinite ease-in-out alternate-reverse; }
+  .glitch:hover:after {
+    text-shadow: -5px 0 rgba(0, 0, 255, 0.7);
+    animation: glitch-loop-2 0.8s infinite ease-in-out alternate-reverse; }
+
+@keyframes glitch-loop-1 {
+  0% {
+    clip: rect(36px, 9999px, 9px, 0); }
+  25% {
+    clip: rect(25px, 9999px, 99px, 0); }
+  50% {
+    clip: rect(50px, 9999px, 102px, 0); }
+  75% {
+    clip: rect(30px, 9999px, 92px, 0); }
+  100% {
+    clip: rect(91px, 9999px, 98px, 0); } }
+
+@keyframes glitch-loop-2 {
+  0% {
+    top: -1px;
+    left: 1px;
+    clip: rect(65px, 9999px, 119px, 0); }
+  25% {
+    top: -6px;
+    left: 4px;
+    clip: rect(79px, 9999px, 19px, 0); }
+  50% {
+    top: -3px;
+    left: 2px;
+    clip: rect(68px, 9999px, 11px, 0); }
+  75% {
+    top: 0;
+    left: -4px;
+    clip: rect(95px, 9999px, 53px, 0); }
+  100% {
+    top: -1px;
+    left: -1px;
+    clip: rect(31px, 9999px, 149px, 0); } }

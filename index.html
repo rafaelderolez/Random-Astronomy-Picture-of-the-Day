@@ -37,17 +37,21 @@
     </div>
 
     <footer>
-        <p class="about">About</p>
+        <div class="inner">
+            <p class="about">About</p>
+        </div>
     </footer>
 
     <script id="tplApod" type="text/template">
-        <div class="apod">
-            <div class="apod apod__media" style="background-image:url('<%= image %>')"></div>
-            <div class="apod apod__desc">
-                <p>
-                    <%= title %>
-                </p>
-            </div>
+
+        <div class="apod__media" style="background-image:url('<%= image %>')"></div>
+        <div class="apod__desc">
+            <p class="glitch" data-text="<%= title %>">
+                <%= title %>
+            </p>
+            <p class="glitch" data-text="<%= date %>">
+                <%= date %>
+            </p>
         </div>
     </script>
 

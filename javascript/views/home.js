@@ -30,7 +30,7 @@ App.Views.Home = Backbone.View.extend({
 
     getNewApod: function() {
         var _this = this;
-        $apod = $('.media');
+        $apod = $('.apod');
         $apod.addClass('fadeout');
 
         setTimeout(function() {
@@ -47,7 +47,7 @@ App.Views.Home = Backbone.View.extend({
             $tempElTwo.append(newView.render().el);
 
             _this.$('.main-container').append($tempElTwo);
-        }, 0);
+        }, 2000);
 
         return this;
     },

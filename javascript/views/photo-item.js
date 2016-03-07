@@ -2,7 +2,7 @@ App.Views.PhotoItem = Backbone.View.extend({
 
     tagName: 'div',
 
-    className: 'media media--campaign-thumbnail',
+    className: 'apod',
 
     templateEl: $('#tplApod'),
 
