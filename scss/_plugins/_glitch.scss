@@ -1,0 +1,10 @@
+.glitch {
+    span {
+        @include transition(opacity 0.3s ease);
+        opacity: 0;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+}

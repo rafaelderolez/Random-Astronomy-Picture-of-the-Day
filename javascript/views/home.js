@@ -18,6 +18,8 @@ App.Views.Home = Backbone.View.extend({
 
     render: function() {
         this.getOneApod();
+        this.wrapMatrixCharacters();
+        setTimeout(_.bind(this.matrixFade, this), 1000);
     },
 
     getOneApod: function() {
@@ -36,7 +38,6 @@ App.Views.Home = Backbone.View.extend({
         setTimeout(function() {
             $apod.remove();
             _this.newRandomEl = _.sample(_this.album.models);
-            console.log(_this.newRandomEl);
 
             var $tempElTwo = $(document.createDocumentFragment());
 
@@ -47,13 +48,16 @@ App.Views.Home = Backbone.View.extend({
             $tempElTwo.append(newView.render().el);
 
             _this.$('.main-container').append($tempElTwo);
-        }, 2000);
+            _this.wrapMatrixCharacters();
+            _this.matrixFade();
+        }, 1);
+
+
 
         return this;
     },
 
     renderRandomApod: function() {
-        console.log('renderRandomApod');
         var $tempEl = $(document.createDocumentFragment());
 
         var view = new App.Views.PhotoItem({
@@ -65,6 +69,33 @@ App.Views.Home = Backbone.View.extend({
         this.$('.main-container').append($tempEl);
 
         return this;
+    },
+
+    wrapMatrixCharacters: function() {
+        console.log('wrapMatrixCharacters');
+        var $glitch = $('.glitch');
+
+        $glitch.each(function(index) {
+            var $this = $(this);
+            var character = $(this).text().split('');
+
+            $this.empty();
+            $.each(character, function(i, v) {
+                $this.append($('<span>').text(v));
+            });
+        });
+    },
+    matrixFade: function() {
+        console.log('matrixFade');
+        var $glitch = $('.glitch');
+        var $glitchCharacter = $glitch.find('span');
+        var interval = setInterval(function() {
+            var $ds = $glitchCharacter.not(".active");
+            $ds.eq(Math.floor(Math.random() * $ds.length)).addClass('active');
+            if ($ds.length == 1) {
+                clearInterval(interval);
+            }
+        }, 5);
     }
 
 });
