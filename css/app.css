@@ -404,7 +404,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-family: "Share Tech Mono", sans-serif;
+  font-family: "Rubik", sans-serif;
   margin: 14px 0;
   font-weight: normal;
   font-style: normal;
@@ -490,7 +490,7 @@ textarea {
  * Base styles
  */
 html {
-  font-family: "Share Tech Mono", sans-serif;
+  font-family: "Source Code Pro", sans-serif;
   font-size: 100%;
   width: 100%;
   height: 100%;
@@ -594,12 +594,13 @@ ul.no-list-style {
   background-position: center center; }
 
 .apod__desc {
-  padding: 20px  0 0 20px;
+  margin: 20px;
   max-width: 540px;
   line-height: 1.618;
-  position: relative;
+  position: absolute;
   z-index: 10;
-  color: #FFF; }
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 0.09); }
   .apod__desc p {
     margin: 0 auto;
     font-weight: 100; }
