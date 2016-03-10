@@ -28,7 +28,7 @@ footer {
             background-color: lighten(#1A2026, 5%);
         }
 
-        .fa-rocket {
+        .fa-space-shuttle {
             @include transition(all 0.4s ease);
             @include rem(padding, 16px 56px);
             display: block;
@@ -41,7 +41,8 @@ footer {
         }
 
         &.animate {
-            .fa-rocket:before {
+            pointer-events: none;
+            .fa-space-shuttle:before {
                 @include animation-name(rocket-slide);
                 @include animation-iteration-count(1);
                 @include animation-timing-function(ease);
