@@ -18,6 +18,7 @@
     <title>backbone-tryout</title>
 
     <!-- Included Font Files -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro|Rubik:400,500,300' rel='stylesheet' type='text/css'>
 
     <!-- Included CSS Files -->
@@ -25,30 +26,22 @@
 </head>
 
 <body>
-    <button class="new-apod"><i class="fa fa-rocket"></i></button>
-    <div class="main-container">
-        <!-- <div class="apod">
-            <div class="apod apod__media" style="background-image:url('images/space.jpg')"></div>
-            <div class="apod apod__desc">
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Consectetur adipisicing elit. Autem iure nobis perspiciatis cum fugit itaque, deleniti, hic accusantium voluptates quas rerum nostrum eligendi ex molestias ipsa maiores doloribus facere quo.</p>
-                <p>2015/11/27 - 08:45</p>
-            </div>
-        </div> -->
-    </div>
+    <div class="main-container"></div>
 
     <footer>
         <div class="inner">
-            <p class="about">About</p>
+            <a href="#" class="about">About</a>
+            <button class="new-apod"><i class="fa fa-rocket"></i></button>
         </div>
     </footer>
 
     <script id="tplApod" type="text/template">
-
         <div class="apod__media" style="background-image:url('<%= image %>')"></div>
         <div class="apod__desc">
-            <p class="glitch" data-text="<%= title %>"><%= title %></p>
-            <p class="glitch" data-text="<%= date %>"><%= date %></p>
+            <p class="glitch"><%= date %></p>
+            <p class="glitch"><%= title %></p>
+            <p class=""><%= text %></p>
+            <p class=""><%= credit %></p>
         </div>
     </script>
 

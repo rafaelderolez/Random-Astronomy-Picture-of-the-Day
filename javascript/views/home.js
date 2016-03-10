@@ -14,6 +14,9 @@ App.Views.Home = Backbone.View.extend({
 
         this.album = new App.Collections.PhotosCollection();
         this.album.fetch().done(this.render.bind(this));
+
+        this.newApodBtn = $('.new-apod');
+        this.apod = $('.apod');
     },
 
     render: function() {
@@ -23,20 +26,22 @@ App.Views.Home = Backbone.View.extend({
     },
 
     getOneApod: function() {
-        console.log('getOneApod');
         this.randomEl = _.sample(this.album.models);
-        console.log(this.randomEl);
-
         this.renderRandomApod();
     },
 
     getNewApod: function() {
         var _this = this;
-        $apod = $('.apod');
-        $apod.addClass('fadeout');
+
+        this.newApodBtn.addClass('animate');
+        setTimeout(function() {
+            _this.newApodBtn.removeClass('animate');
+        }, 400);
+        this.apod = $('.apod');
+        this.apod.addClass('fadeout');
 
         setTimeout(function() {
-            $apod.remove();
+            _this.apod.remove();
             _this.newRandomEl = _.sample(_this.album.models);
 
             var $tempElTwo = $(document.createDocumentFragment());
@@ -50,7 +55,7 @@ App.Views.Home = Backbone.View.extend({
             _this.$('.main-container').append($tempElTwo);
             _this.wrapMatrixCharacters();
             _this.matrixFade();
-        }, 1);
+        }, 400);
 
 
 
@@ -72,7 +77,6 @@ App.Views.Home = Backbone.View.extend({
     },
 
     wrapMatrixCharacters: function() {
-        console.log('wrapMatrixCharacters');
         var $glitch = $('.glitch');
 
         $glitch.each(function(index) {
@@ -86,7 +90,6 @@ App.Views.Home = Backbone.View.extend({
         });
     },
     matrixFade: function() {
-        console.log('matrixFade');
         var $glitch = $('.glitch');
         var $glitchCharacter = $glitch.find('span');
         var interval = setInterval(function() {

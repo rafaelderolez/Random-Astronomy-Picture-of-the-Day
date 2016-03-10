@@ -3,11 +3,6 @@
     height: 100%;
 }
 
-.new-apod {
-    position: absolute;
-    z-index: 15;
-}
-
 .apod__media {
     width: 100%;
     height: 100%;
@@ -18,17 +13,22 @@
 }
 
 .apod__desc {
+    padding: 20px;
     margin: 20px;
-    max-width: 540px;
+    max-width: 480px;
     line-height: 1.618;
     position: absolute;
     z-index: 10;
-    color: #FFF;
-    background-color: rgba(0, 0, 0, 0.09);
+    color: #F7F7F7;
+    // background-color: rgba(38, 40, 48, 0.9);
+    background-color: rgba(26, 32, 38, 0.9);
+
     .inner {
 
     }
     p {
+        @include rem(font-size, 13px);
+        line-height: 1.618;
         margin: 0 auto;
         font-weight: 100;
     }

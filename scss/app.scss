@@ -12,9 +12,15 @@
 @import "../node_modules/bourbon/app/assets/stylesheets/_bourbon";
 
 // Uncomment to enable Neat
-// @import "_base/_grid-settings";
-// @import "../node_modules/bourbon-neat/app/assets/stylesheets/_neat-helpers";
-// @import "../node_modules/bourbon-neat/app/assets/stylesheets/_neat";
+@import "_base/_grid-settings";
+@import "../node_modules/bourbon-neat/app/assets/stylesheets/_neat-helpers";
+@import "../node_modules/bourbon-neat/app/assets/stylesheets/_neat";
+
+/**
+ * Mixins
+ * Put them inside "mixins" folder
+ */
+@import "_mixins/rem";
 
 /**
  * Base styles
