@@ -558,25 +558,38 @@ ul.no-list-style {
 .apod {
   width: 100%;
   height: 100%; }
-
-.apod__media {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 5;
-  background-size: cover;
-  background-position: center center; }
-
-.apod__desc {
-  padding: 20px;
-  margin: 20px;
-  max-width: 480px;
-  line-height: 1.618;
-  position: absolute;
-  z-index: 10;
-  color: #F7F7F7;
-  background-color: rgba(26, 32, 38, 0.9); }
-  .apod__desc p {
+  .apod__desc {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 20px;
+    padding: 2rem;
+    margin: 20px;
+    margin: 2rem;
+    background-color: rgba(26, 32, 38, 0.9);
+    color: #F7F7F7;
+    width: 480px;
+    line-height: 1.618;
+    position: absolute;
+    z-index: 10; }
+    .apod__desc .description {
+      margin: 0 0 10px 0;
+      margin: 0 0 1rem 0; }
+  .apod__header {
+    padding: 0 40px 0 0;
+    padding: 0 4rem 0 0; }
+  .apod__media {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+    background-size: cover;
+    background-position: center center; }
+  .apod__read-more {
+    margin: 10px 0 0 0;
+    margin: 1rem 0 0 0;
+    display: none; }
+  .apod p {
     font-size: 13px;
     font-size: 1.3rem;
     line-height: 1.618;
@@ -597,48 +610,9 @@ footer {
     margin: 1.6rem 0;
     color: #F7F7F7;
     position: absolute;
-    left: 0; }
-  footer .new-apod {
-    -webkit-transition: all 0.35s cubic-bezier(0.2, 0.3, 0, 1);
-    -moz-transition: all 0.35s cubic-bezier(0.2, 0.3, 0, 1);
-    transition: all 0.35s cubic-bezier(0.2, 0.3, 0, 1);
-    margin: 0 auto;
-    margin: 0 auto;
-    font-size: 18px;
-    font-size: 1.8rem;
-    padding: 0;
-    background-color: #1A2026;
-    color: #F7F7F7;
-    outline: none;
-    border: 0; }
-    footer .new-apod:hover {
-      background-color: #242d35; }
-    footer .new-apod .fa-space-shuttle {
-      -webkit-transition: all 0.4s ease;
-      -moz-transition: all 0.4s ease;
-      transition: all 0.4s ease;
-      padding: 16px 56px;
-      padding: 1.6rem 5.6rem;
-      display: block;
-      position: relative;
-      overflow: hidden; }
-      footer .new-apod .fa-space-shuttle:before {
-        display: block; }
-    footer .new-apod.animate {
-      pointer-events: none; }
-      footer .new-apod.animate .fa-space-shuttle:before {
-        -webkit-animation-name: rocket-slide;
-        -moz-animation-name: rocket-slide;
-        animation-name: rocket-slide;
-        -webkit-animation-iteration-count: 1;
-        -moz-animation-iteration-count: 1;
-        animation-iteration-count: 1;
-        -webkit-animation-timing-function: ease;
-        -moz-animation-timing-function: ease;
-        animation-timing-function: ease;
-        -webkit-animation-duration: 0.4s;
-        -moz-animation-duration: 0.4s;
-        animation-duration: 0.4s; }
+    right: 0;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500; }
   footer .inner {
     display: block;
     margin: 20px;
@@ -702,6 +676,80 @@ footer {
     -webkit-transform: translateX(-430%); }
   100% {
     -webkit-transform: translateX(0%); } }
+
+.new-apod {
+  -webkit-transition: all 0.35s cubic-bezier(0.2, 0.3, 0, 1);
+  -moz-transition: all 0.35s cubic-bezier(0.2, 0.3, 0, 1);
+  transition: all 0.35s cubic-bezier(0.2, 0.3, 0, 1);
+  margin: 0 auto;
+  margin: 0 auto;
+  font-size: 18px;
+  font-size: 1.8rem;
+  padding: 0;
+  background-color: #1A2026;
+  color: #F7F7F7;
+  outline: none;
+  border: 0; }
+  .new-apod:hover {
+    background-color: #242d35; }
+  .new-apod .fa-space-shuttle {
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    padding: 16px 56px;
+    padding: 1.6rem 5.6rem;
+    display: block;
+    position: relative;
+    overflow: hidden; }
+    .new-apod .fa-space-shuttle:before {
+      display: block; }
+  .new-apod.animate {
+    pointer-events: none; }
+    .new-apod.animate .fa-space-shuttle:before {
+      -webkit-animation-name: rocket-slide;
+      -moz-animation-name: rocket-slide;
+      animation-name: rocket-slide;
+      -webkit-animation-iteration-count: 1;
+      -moz-animation-iteration-count: 1;
+      animation-iteration-count: 1;
+      -webkit-animation-timing-function: ease;
+      -moz-animation-timing-function: ease;
+      animation-timing-function: ease;
+      -webkit-animation-duration: 0.4s;
+      -moz-animation-duration: 0.4s;
+      animation-duration: 0.4s; }
+
+.expand {
+  margin: 0 0 10px 0;
+  margin: 0 0 1rem 0;
+  position: relative;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  position: absolute;
+  right: 34px;
+  top: 40px; }
+  .expand:after, .expand:before {
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background-color: #FFF;
+    content: " "; }
+  .expand:after {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg); }
+  .expand--active:after {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg); }
 
 /**
  * Plugin styles

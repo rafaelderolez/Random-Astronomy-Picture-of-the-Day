@@ -36,12 +36,17 @@
     </footer>
 
     <script id="tplApod" type="text/template">
-        <div class="apod__media" style="background-image:url('<%= image %>')"></div>
+        <div class="apod__media" style="background-image:url('<%= model.image %>')"></div>
         <div class="apod__desc">
-            <p class="glitch"><%= date %></p>
-            <p class="glitch"><%= title %></p>
-            <p class=""><%= text %></p>
-            <p class=""><%= credit %></p>
+            <div class="expand <% if(options.descriptionVisible) { %>expand--active<% } %>"></div>
+            <header class="apod__header">
+                <p class="date glitch"><%= model.date %></p>
+                <p class="title glitch"><%= model.title %></p>
+            </header>
+            <section class="apod__read-more" style="<% if(options.descriptionVisible) { %>display: block;<% } %>">
+                <p class="description"><%= model.text %></p>
+                <p class="credit"><%= model.credit %></p>
+            </section>
         </div>
     </script>
 

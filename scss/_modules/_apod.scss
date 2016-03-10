@@ -1,31 +1,41 @@
 .apod {
     width: 100%;
     height: 100%;
-}
 
-.apod__media {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 5;
-    background-size: cover;
-    background-position: center center;
-}
+    &__desc {
+        @include transition(all 0.3s ease);
+        @include rem(padding, 20px);
+        @include rem(margin, 20px);
+        background-color: rgba(26, 32, 38, 0.9);
+        color: #F7F7F7;
+        width: 480px;
+        line-height: 1.618;
+        position: absolute;
+        z-index: 10;
 
-.apod__desc {
-    padding: 20px;
-    margin: 20px;
-    max-width: 480px;
-    line-height: 1.618;
-    position: absolute;
-    z-index: 10;
-    color: #F7F7F7;
-    // background-color: rgba(38, 40, 48, 0.9);
-    background-color: rgba(26, 32, 38, 0.9);
-
-    .inner {
-
+        .description {
+            @include rem(margin, 0 0 10px 0);
+        }
     }
+
+    &__header {
+        @include rem(padding, 0 40px 0 0);
+    }
+
+    &__media {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 5;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    &__read-more {
+        @include rem(margin, 10px 0 0 0);
+        display: none;
+    }
+
     p {
         @include rem(font-size, 13px);
         line-height: 1.618;

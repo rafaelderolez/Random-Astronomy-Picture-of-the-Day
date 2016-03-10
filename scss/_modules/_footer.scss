@@ -11,44 +11,9 @@ footer {
         @include rem(margin, 16px 0);
         color: #F7F7F7;
         position: absolute;
-        left: 0;
-    }
-
-    .new-apod {
-        @include transition(all 0.35s $slick-ease);
-        @include rem(margin, 0 auto);
-        @include rem(font-size, 18px);
-        padding: 0;
-        background-color: #1A2026;
-        color: #F7F7F7;
-        outline: none;
-        border: 0;
-
-        &:hover {
-            background-color: lighten(#1A2026, 5%);
-        }
-
-        .fa-space-shuttle {
-            @include transition(all 0.4s ease);
-            @include rem(padding, 16px 56px);
-            display: block;
-            position: relative;
-            overflow: hidden;
-
-            &:before {
-                display: block;
-            }
-        }
-
-        &.animate {
-            pointer-events: none;
-            .fa-space-shuttle:before {
-                @include animation-name(rocket-slide);
-                @include animation-iteration-count(1);
-                @include animation-timing-function(ease);
-                @include animation-duration(0.4s);
-            }
-        }
+        right: 0;
+        font-family: $alt-font;
+        font-weight: 500;
     }
 
     .inner {

@@ -1,0 +1,30 @@
+.expand {
+    @include rem(margin, 0 0 10px 0);
+    position: relative;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    position: absolute;
+    right: 34px;
+    top: 40px;
+
+    &:after,
+    &:before {
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        background-color: #FFF;
+        content: " ";
+    }
+
+    &:after {
+        @include transition(all 0.3s ease);
+        @include transform(rotate(90deg));
+    }
+
+    &--active {
+        &:after {
+            @include transform(rotate(180deg));
+        }
+    }
+}
