@@ -24,6 +24,7 @@ App.Views.Home = Backbone.View.extend({
         var $tempEl = $(document.createDocumentFragment());
 
         this.getOneApod();
+        this.apodLinkRegex();
 
         var view = new App.Views.PhotoItem({
             model: this.randomEl,
@@ -39,9 +40,16 @@ App.Views.Home = Backbone.View.extend({
 
         view.viewDidRender();
     },
-
     getOneApod: function() {
         this.randomEl = _.sample(this.album.models);
+    },
+
+    apodLinkRegex: function() {
+        var preRegexText = this.randomEl.attributes.text;
+        var postRegexText = preRegexText.replace(/a href=\"ap[0-9]{6}/, function(match) {
+            return match.replace(/=\"/, '="http://apod.nasa.gov/apod/')
+        });
+        this.randomEl.set('text', postRegexText);
     },
 
     getNewApod: function() {
