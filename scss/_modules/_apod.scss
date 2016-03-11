@@ -16,13 +16,14 @@
         z-index: 10;
 
         .description {
-            @include rem(margin, 0 0 10px 0);
+            @include rem(margin, 10px 0);
         }
     }
 
     &__header {
         @include rem(padding, 0 40px 0 0);
         @include rem(font-size, 14px);
+        position: relative;
     }
 
     &__media {
@@ -38,8 +39,6 @@
         @include rem(font-size, 13px);
         height: 0;
         overflow: scroll;
-        position: relative;
-        top: 10px;
     }
 
     p {
@@ -51,6 +50,5 @@
 
     a {
         color: #FFF;
-        text-decoration: underline;
     }
 }

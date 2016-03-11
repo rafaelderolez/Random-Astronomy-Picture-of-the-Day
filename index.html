@@ -38,8 +38,8 @@
     <script id="tplApod" type="text/template">
         <div class="apod__media" style="background-image:url('<%= model.image %>')"></div>
         <div class="apod__desc">
-            <div class="expand <% if(options.descriptionVisible) { %>expand--active<% } %>"></div>
             <header class="apod__header">
+                <div class="expand <% if(options.descriptionVisible) { %>expand--active<% } %>"></div>
                 <p class="date glitch"><%= model.date %></p>
                 <p class="title glitch"><%= model.title %></p>
             </header>
