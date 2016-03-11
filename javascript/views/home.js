@@ -18,9 +18,6 @@ App.Views.Home = Backbone.View.extend({
 
         this.album = new App.Collections.PhotosCollection();
         this.album.fetch().done(this.render.bind(this));
-
-        this.newApodBtn = $('.new-apod');
-        this.apod = $('.apod');
     },
 
     render: function() {
@@ -48,16 +45,18 @@ App.Views.Home = Backbone.View.extend({
 
     getNewApod: function() {
         var _this = this;
+        var $newApodBtn = $('.new-apod');
+        var $apod = $('.apod');
 
-        this.newApodBtn.addClass('animate');
+        $newApodBtn.addClass('animate');
         setTimeout(function() {
-            _this.newApodBtn.removeClass('animate');
+            $newApodBtn.removeClass('animate');
         }, 400);
-        this.apod = $('.apod');
-        this.apod.addClass('fadeout');
+
+        $apod.addClass('fadeout');
 
         setTimeout(function() {
-            _this.apod.remove();
+            $apod.remove();
             _this.render();
         }, 400);
 
@@ -69,6 +68,8 @@ App.Views.Home = Backbone.View.extend({
     },
     onExpandBtClick: function() {
         this.isDescriptionVisible = this.isDescriptionVisible ? false : true;
+        console.log(this.isDescriptionVisible);
     },
+
 
 });
