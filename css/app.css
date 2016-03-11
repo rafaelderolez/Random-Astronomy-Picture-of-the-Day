@@ -601,7 +601,8 @@ ul.no-list-style {
     font-weight: 100;
     color: #F7F7F7; }
   .apod a {
-    color: #FFF; }
+    color: #FFF;
+    text-decoration: underline; }
 
 footer {
   position: absolute;
