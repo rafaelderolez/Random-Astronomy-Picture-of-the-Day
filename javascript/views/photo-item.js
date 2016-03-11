@@ -19,19 +19,35 @@ App.Views.PhotoItem = Backbone.View.extend({
      */
     initialize: function(datas) {
         this.options = datas.options;
-        console.log(this.options)
+        this.parent = datas.options.parent;
     },
 
     expandApodDescription: function(ev) {
+        var _this = this;
+
+        this.isExpanded = this.parent.isDescriptionVisible;
+
         var $expand = $(ev.currentTarget);
         var $readMore = $('.apod__read-more');
+
         $expand.toggleClass('expand--active');
 
-        if ($readMore.is(':visible')) {
-            $readMore.fadeOut('slow');
+
+        if (this.isExpanded == true) {
+            TweenMax.to($readMore, 0.4, {
+                height: 0,
+                ease: Sine.easeInOut
+            });
         } else {
-            $readMore.fadeIn('slow');
+            TweenMax.set($readMore, {
+                height: "auto"
+            });
+            TweenMax.from($readMore, 0.4, {
+                height: 0,
+                ease: Sine.easeInOut
+            });
         }
+
 
     },
 

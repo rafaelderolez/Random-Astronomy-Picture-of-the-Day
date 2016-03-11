@@ -8,7 +8,9 @@
         @include rem(margin, 20px);
         background-color: rgba(26, 32, 38, 0.9);
         color: #F7F7F7;
+        max-height: calc(100% - 110px);
         width: 480px;
+        max-width: 100%;
         line-height: 1.618;
         position: absolute;
         z-index: 10;
@@ -20,6 +22,7 @@
 
     &__header {
         @include rem(padding, 0 40px 0 0);
+        @include rem(font-size, 14px);
     }
 
     &__media {
@@ -32,14 +35,22 @@
     }
 
     &__read-more {
-        @include rem(margin, 10px 0 0 0);
-        display: none;
+        @include rem(font-size, 13px);
+        height: 0;
+        overflow: scroll;
+        position: relative;
+        top: 10px;
     }
 
     p {
-        @include rem(font-size, 13px);
         line-height: 1.618;
         margin: 0 auto;
         font-weight: 100;
+        color: #F7F7F7;
+    }
+
+    a {
+        color: #FFF;
+        text-decoration: underline;
     }
 }

@@ -28,7 +28,8 @@ App.Views.Home = Backbone.View.extend({
         var view = new App.Views.PhotoItem({
             model: this.randomEl,
             options: {
-                descriptionVisible: this.isDescriptionVisible
+                descriptionVisible: this.isDescriptionVisible,
+                parent: this
             }
         });
 
@@ -68,7 +69,6 @@ App.Views.Home = Backbone.View.extend({
     },
     onExpandBtClick: function() {
         this.isDescriptionVisible = this.isDescriptionVisible ? false : true;
-        console.log(this.isDescriptionVisible);
     },
 
 
