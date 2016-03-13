@@ -26,6 +26,9 @@
 </head>
 
 <body>
+    <div class="loader">
+        <p class="loading">Loading<span>.</span><span>.</span><span>.</span></p>
+    </div>
     <div class="main-container"></div>
 
     <footer>
@@ -36,16 +39,24 @@
     </footer>
 
     <script id="tplApod" type="text/template">
-        <div class="apod__media" style="background-image:url('<%= model.image %>')"></div>
+        <div class="apod__media lazy" data-original="<%= model.image %>" style=""></div>
         <div class="apod__desc">
             <header class="apod__header">
                 <div class="expand <% if(options.descriptionVisible) { %>expand--active<% } %>"></div>
-                <p class="date glitch"><%= model.date %></p>
-                <p class="title glitch"><%= model.title %></p>
+                <p class="date glitch">
+                    <%= model.date %>
+                </p>
+                <p class="title glitch">
+                    <%= model.title %>
+                </p>
             </header>
             <section class="apod__read-more" style="<% if(options.descriptionVisible) { %>height: auto;<% } %>">
-                <p class="description"><%= model.text %></p>
-                <p class="credit"><%= model.credit %></p>
+                <p class="description">
+                    <%= model.text %>
+                </p>
+                <p class="credit">
+                    <%= model.credit %>
+                </p>
             </section>
         </div>
     </script>
@@ -55,6 +66,7 @@
     <script src="./node_modules/underscore/underscore-min.js"></script>
     <script src="./node_modules/backbone/backbone-min.js"></script>
     <script src="./node_modules/backbone.localstorage/backbone.localstorage-min.js"></script>
+    <script src="./node_modules/jquery-lazyload/jquery.lazyload.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
 
     <script src="./javascript/app.js"></script>

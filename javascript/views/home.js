@@ -17,7 +17,13 @@ App.Views.Home = Backbone.View.extend({
         this.isDescriptionVisible = false;
 
         this.album = new App.Collections.PhotosCollection();
-        this.album.fetch().done(this.render.bind(this));
+        this.album.fetch().done(this.fadeIn.bind(this));
+    },
+
+    fadeIn: function() {
+        var $loader = $('.loader');
+        $loader.addClass('loader--hidden');
+        this.render();
     },
 
     render: function() {

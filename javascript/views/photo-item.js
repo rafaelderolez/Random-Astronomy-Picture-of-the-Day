@@ -87,6 +87,10 @@ App.Views.PhotoItem = Backbone.View.extend({
     },
 
     viewDidRender: function() {
+        $('.lazy').lazyload({
+            effect: 'fadeIn'
+        });
+
         this.wrapMatrixCharacters();
         this.matrixFade();
     }
