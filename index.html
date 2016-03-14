@@ -46,7 +46,7 @@
     </footer>
 
     <script id="tplApod" type="text/template">
-        <div class="apod__media lazy" data-original="<%= model.image %>" style=""></div>
+        <div class="apod__media lazy" data-original="<%= model.hdurl %>" style=""></div>
         <div class="apod__desc">
             <header class="apod__header">
                 <div class="expand <% if(options.descriptionVisible) { %>expand--active<% } %>"></div>
@@ -59,10 +59,10 @@
             </header>
             <section class="apod__read-more" style="<% if(options.descriptionVisible) { %>height: auto;<% } %>">
                 <p class="description">
-                    <%= model.text %>
+                    <%= model.explanation %>
                 </p>
                 <p class="credit">
-                    <%= model.credit %>
+                    <%= model.copyright %>
                 </p>
             </section>
         </div>
