@@ -63,7 +63,6 @@
         },
 
         parse: function(response, options) {
-            console.log(response);
             return response;
         }
 
