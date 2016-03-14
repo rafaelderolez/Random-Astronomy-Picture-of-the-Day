@@ -1,4 +1,4 @@
-App.Views.PhotoItem = Backbone.View.extend({
+App.Views.ApodItem = Backbone.View.extend({
 
     tagName: 'div',
 
