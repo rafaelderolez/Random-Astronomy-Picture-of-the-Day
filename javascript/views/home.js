@@ -27,12 +27,10 @@ App.Views.Home = Backbone.View.extend({
     },
 
     render: function() {
-        var $tempEl = $(document.createDocumentFragment());
-
         this.getOneApod();
-        this.apodLinkRegex();
 
-        var view = new App.Views.PhotoItem({
+        var $tempEl = $(document.createDocumentFragment());
+        var view = new App.Views.ApodItem({
             model: this.randomEl,
             options: {
                 descriptionVisible: this.isDescriptionVisible,
@@ -41,21 +39,12 @@ App.Views.Home = Backbone.View.extend({
         });
 
         $tempEl.append(view.render().el);
-
         this.$('.main-container').append($tempEl);
-
         view.viewDidRender();
     },
+
     getOneApod: function() {
         this.randomEl = _.sample(this.album.models);
-    },
-
-    apodLinkRegex: function() {
-        var preRegexText = this.randomEl.attributes.text;
-        var postRegexText = preRegexText.replace(/a href=\"ap[0-9]{6}/g, function(match) {
-            return match.replace(/=\"/, '="http://apod.nasa.gov/apod/')
-        });
-        this.randomEl.set('text', postRegexText);
     },
 
     getNewApod: function() {
@@ -69,18 +58,17 @@ App.Views.Home = Backbone.View.extend({
         }, 400);
 
         $apod.addClass('fadeout');
+        $apod.remove();
 
-        setTimeout(function() {
-            $apod.remove();
-            _this.render();
-        }, 400);
+        _this.render();
 
         return this;
     },
 
     onNewApodBtClick: function() {
-        this.getNewApod();
+        this.album.fetch().done(this.getNewApod.bind(this));
     },
+
     onExpandBtClick: function() {
         this.isDescriptionVisible = this.isDescriptionVisible ? false : true;
     },
