@@ -30,8 +30,7 @@ App.Views.Home = Backbone.View.extend({
         this.getOneApod();
 
         var $tempEl = $(document.createDocumentFragment());
-
-        var view = new App.Views.PhotoItem({
+        var view = new App.Views.ApodItem({
             model: this.randomEl,
             options: {
                 descriptionVisible: this.isDescriptionVisible,
@@ -39,11 +38,8 @@ App.Views.Home = Backbone.View.extend({
             }
         });
 
-        console.log(view);
-
         $tempEl.append(view.render().el);
         this.$('.main-container').append($tempEl);
-
         view.viewDidRender();
     },
 
@@ -55,8 +51,6 @@ App.Views.Home = Backbone.View.extend({
         var _this = this;
         var $newApodBtn = $('.new-apod');
         var $apod = $('.apod');
-
-        this.album.fetch();
 
         $newApodBtn.addClass('animate');
         setTimeout(function() {
@@ -72,7 +66,7 @@ App.Views.Home = Backbone.View.extend({
     },
 
     onNewApodBtClick: function() {
-        this.getNewApod();
+        this.album.fetch().done(this.getNewApod.bind(this));
     },
 
     onExpandBtClick: function() {
