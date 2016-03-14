@@ -52,7 +52,7 @@ App.Views.Home = Backbone.View.extend({
 
     apodLinkRegex: function() {
         var preRegexText = this.randomEl.attributes.text;
-        var postRegexText = preRegexText.replace(/a href=\"ap[0-9]{6}/, function(match) {
+        var postRegexText = preRegexText.replace(/a href=\"ap[0-9]{6}/g, function(match) {
             return match.replace(/=\"/, '="http://apod.nasa.gov/apod/')
         });
         this.randomEl.set('text', postRegexText);
