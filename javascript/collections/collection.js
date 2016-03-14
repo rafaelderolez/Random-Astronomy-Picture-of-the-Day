@@ -56,12 +56,9 @@
 
         fetch: function(options) {
             this.randomDate();
-            console.log(this.randomApodDate)
 
             options = options || {};
-
             options.url = this.urlBase + this.randomApodDate + this.urlEnd;
-            console.log(options.url);
             return Backbone.Collection.prototype.fetch.call(this, options);
         },
 
