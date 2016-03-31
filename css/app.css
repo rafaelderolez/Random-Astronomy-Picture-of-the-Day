@@ -895,6 +895,46 @@ footer {
     -o-transform: rotate(180deg);
     transform: rotate(180deg); }
 
+.download {
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  top: 50%;
+  right: 36px;
+  width: 13px;
+  height: 16px;
+  cursor: pointer;
+  position: absolute; }
+  .download:after, .download:before {
+    width: 8px;
+    height: 1px;
+    position: absolute;
+    background-color: #FFF;
+    top: 6px;
+    content: " "; }
+  .download:after {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    right: 0; }
+  .download:before {
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg); }
+  .download a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #FFF; }
+
 /**
  * Plugin styles
  * Put them inside "plugins" folder

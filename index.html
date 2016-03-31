@@ -46,10 +46,11 @@
     </footer>
 
     <script id="tplApod" type="text/template">
-        <div class="apod__media lazy" data-original="<%= model.hdurl %>" style=""></div>
+        <div class="apod__media lazy" data-original="<%= model.url %>" style=""></div>
         <div class="apod__desc">
             <header class="apod__header">
                 <div class="expand <% if(options.descriptionVisible) { %>expand--active<% } %>"></div>
+                <div class="download"><a href="<%= model.hdurl %>" download="<%= model.title %>"></a></div>
                 <p class="date glitch">
                     <%= model.date %>
                 </p>
