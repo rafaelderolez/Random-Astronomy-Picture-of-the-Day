@@ -7,13 +7,13 @@
 
         model: App.Models.PhotoModel,
         urlBase: 'https://api.nasa.gov/planetary/apod?date=',
-        urlEnd: '&api_key=ppQkLuKY08IqGNlzBtinqtf16JVFMgELtp7g02Vw',
+        urlApiKey: '&api_key=ppQkLuKY08IqGNlzBtinqtf16JVFMgELtp7g02Vw',
 
         initialize: function() {
 
         },
 
-        randomDate: function() {
+        generateRandomDate: function() {
             /////////////////////////////////////////////////////
             // Random APOD Date Generator                      //
             // by Geckzilla aka Judy Schmidt www.geckzilla.com //
@@ -55,10 +55,11 @@
         },
 
         fetch: function(options) {
-            this.randomDate();
+            this.generateRandomDate();
 
             options = options || {};
-            options.url = this.urlBase + this.randomApodDate + this.urlEnd;
+            options.url = this.urlBase + this.randomApodDate + this.urlApiKey;
+
             return Backbone.Collection.prototype.fetch.call(this, options);
         },
 
