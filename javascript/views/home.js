@@ -15,9 +15,8 @@ App.Views.Home = Backbone.View.extend({
         var _this = this;
 
         this.isDescriptionVisible = false;
-
-        this.album = new App.Collections.PhotosCollection();
-        this.album.fetch().done(this.fadeIn.bind(this));
+        this.randomApod = new App.Models.PhotoModel();
+        this.randomApod.fetch().done(this.fadeIn.bind(this));
     },
 
     fadeIn: function() {
@@ -27,11 +26,9 @@ App.Views.Home = Backbone.View.extend({
     },
 
     render: function() {
-        this.getOneApod();
-
         var $tempEl = $(document.createDocumentFragment());
         var view = new App.Views.ApodItem({
-            model: this.randomEl,
+            model: this.randomApod,
             options: {
                 descriptionVisible: this.isDescriptionVisible,
                 parent: this
@@ -41,10 +38,6 @@ App.Views.Home = Backbone.View.extend({
         $tempEl.append(view.render().el);
         this.$('.main-container').append($tempEl);
         view.viewDidRender();
-    },
-
-    getOneApod: function() {
-        this.randomEl = _.sample(this.album.models);
     },
 
     getNewApod: function() {
@@ -66,12 +59,16 @@ App.Views.Home = Backbone.View.extend({
     },
 
     onNewApodBtClick: function() {
-        this.album.fetch().done(this.getNewApod.bind(this));
+        var _this = this;
+        this.randomApod.fetch({
+            success: function() {
+                _this.getNewApod();
+            }
+        });
     },
 
     onExpandBtClick: function() {
         this.isDescriptionVisible = this.isDescriptionVisible ? false : true;
     },
-
 
 });
