@@ -38,18 +38,15 @@
                 <li class="external__links__link">
                     <a data-about href="#">About</a>
                 </li>
-                <li class="external__links__link">
-                    Side-project by <a target="_blank" href="http://rafaelderolez.be">Rafael Derolez</a>
-                </li>
             </ul>
             <button class="new-apod"><i class="fa fa-space-shuttle"></i></button>
         </div>
     </footer>
 
     <script id="tplApod" type="text/template">
-        <div class="apod__media lazy" data-original="<%= model.url %>" style=""></div>
-        <div class="apod__desc">
-            <header class="apod__header">
+        <div class="box__media lazy" data-original="<%= model.url %>" style=""></div>
+        <div class="box__content">
+            <header class="box__header">
                 <div class="expand <% if(options.descriptionVisible) { %>expand--active<% } %>"></div>
                 <div class="download">
                     <a href="<%= model.hdurl %>" download="<%= model.title %>"></a>
@@ -57,7 +54,7 @@
                 <p class="date glitch"><%= model.date %></p>
                 <p class="title glitch"><%= model.title %></p>
             </header>
-            <section class="apod__read-more" style="<% if(options.descriptionVisible) { %>height: auto;<% } %>">
+            <section class="box__read-more" style="<% if(options.descriptionVisible) { %>height: auto;<% } %>">
                 <p class="description">
                     <%= model.explanation %>
                 </p>
@@ -69,13 +66,16 @@
     </script>
 
     <script id="tplAbout" type="text/template">
-        <div class="apod__media lazy" data-original="" style=""></div>
-        <div class="apod__desc">
-            <header class="apod__header">
+        <div class="box__media lazy" data-original="images/space.jpg" style=""></div>
+        <div class="box__content">
+            <header class="box__header">
                 <p>About</p>
             </header>
             <section>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, sed. Laborum assumenda ratione, fugit. Quos iusto molestias sint, ad iste modi quo, consequuntur reiciendis quibusdam laboriosam temporibus adipisci itaque, expedita.
+                <p>This little web app generates a random <a target="_blank" href="http://apod.nasa.gov/apod/astropix.html">APOD</a> (Astronomy Picture Of the Day) from NASA's archives.</p>
+                <p>I had to work on a couple of Backbone projects at work so I wanted to become a bit more familiar with the framework.</p>
+                <p>Side-project by <a target="_blank" href="http://rafaelderolez.be">Rafael Derolez</a></p>
+
             </section>
         </div>
     </script>

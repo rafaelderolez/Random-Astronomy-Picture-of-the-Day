@@ -2,7 +2,7 @@ App.Views.Home.About = Backbone.View.extend({
 
     tagName: 'div',
 
-    className: 'about',
+    className: 'box box--about',
 
     templateEl: $('#tplAbout'),
 
@@ -21,7 +21,16 @@ App.Views.Home.About = Backbone.View.extend({
 
     render: function() {
         this.$el.html(this.template());
+        this.lazyLoadBackground();
         return this;
+    },
+
+    lazyLoadBackground: function() {
+        setTimeout(function() {
+            $('.lazy').lazyload({
+                effect: 'fadeIn'
+            });
+        }, 1);
     },
 
     closeView: function() {

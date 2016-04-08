@@ -2,7 +2,7 @@ App.Views.Home.ApodItem = Backbone.View.extend({
 
     tagName: 'div',
 
-    className: 'apod',
+    className: 'box box--apod',
 
     templateEl: $('#tplApod'),
 
@@ -28,7 +28,7 @@ App.Views.Home.ApodItem = Backbone.View.extend({
         this.isExpanded = this.parent.isDescriptionVisible;
 
         var $expand = $(ev.currentTarget);
-        var $readMore = $('.apod__read-more');
+        var $readMore = $('.box__read-more');
 
         $expand.toggleClass('expand--active');
 
