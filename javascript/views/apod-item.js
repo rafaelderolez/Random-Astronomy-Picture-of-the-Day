@@ -1,4 +1,4 @@
-App.Views.ApodItem = Backbone.View.extend({
+App.Views.Home.ApodItem = Backbone.View.extend({
 
     tagName: 'div',
 
@@ -32,7 +32,6 @@ App.Views.ApodItem = Backbone.View.extend({
 
         $expand.toggleClass('expand--active');
 
-
         if (this.isExpanded == true) {
             TweenMax.to($readMore, 0.4, {
                 height: 0,
@@ -40,15 +39,13 @@ App.Views.ApodItem = Backbone.View.extend({
             });
         } else {
             TweenMax.set($readMore, {
-                height: "auto"
+                height: 'auto'
             });
             TweenMax.from($readMore, 0.4, {
                 height: 0,
                 ease: Sine.easeInOut
             });
         }
-
-
     },
 
     wrapMatrixCharacters: function() {
@@ -93,6 +90,9 @@ App.Views.ApodItem = Backbone.View.extend({
 
         this.wrapMatrixCharacters();
         this.matrixFade();
-    }
+    },
 
+    closeView: function() {
+        this.remove();
+    },
 });

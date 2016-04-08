@@ -582,8 +582,8 @@ ul.no-list-style {
       margin: 10px 0;
       margin: 1rem 0; }
   .apod__header {
-    padding: 0 40px 0 0;
-    padding: 0 4rem 0 0;
+    padding: 0 65px 0 0;
+    padding: 0 6.5rem 0 0;
     font-size: 14px;
     font-size: 1.4rem;
     position: relative; }
@@ -727,35 +727,32 @@ footer {
     width: 100%;
     padding: 0;
     margin: 0; }
-    footer .external__links__link {
-      float: left;
-      list-style: none;
-      font-family: "Rubik", sans-serif;
-      font-size: 16px;
-      font-size: 1.6rem;
-      margin: 16px 0;
-      margin: 1.6rem 0;
-      color: #F7F7F7;
-      font-weight: 500; }
-      footer .external__links__link:nth-of-type(2) {
-        float: right; }
-        footer .external__links__link:nth-of-type(2) a {
-          position: relative; }
-          footer .external__links__link:nth-of-type(2) a:after {
-            content: " ";
-            width: 100%;
-            height: 1px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            background-color: #fff; }
-      footer .external__links__link a {
-        color: #F7F7F7; }
-      footer .external__links__link * {
-        margin: 0; }
+  footer .external__link {
+    font-size: 14px;
+    font-size: 1.4rem;
+    margin: 16px 0;
+    margin: 1.6rem 0;
+    float: right;
+    list-style: none;
+    font-family: "Rubik", sans-serif;
+    color: #F7F7F7;
+    font-weight: 500; }
+    footer .external__link a {
+      color: #FFF;
+      position: relative; }
+      footer .external__link a:after {
+        content: " ";
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #fff; }
+    footer .external__link * {
+      margin: 0; }
   footer .inner {
     display: block;
-    margin: 20px;
+    margin: 20px 40px;
     position: relative;
     text-align: center; }
     footer .inner::after {
@@ -934,6 +931,26 @@ footer {
     position: absolute;
     padding-bottom: 15px;
     border-bottom: 1px solid #FFF; }
+
+nav {
+  position: fixed;
+  z-index: 10;
+  top: 55px;
+  right: 40px; }
+  nav ul {
+    margin: 0;
+    padding: 0; }
+  nav li {
+    list-style: none;
+    float: left; }
+    nav li:nth-child(1) {
+      margin-right: 15px; }
+  nav a {
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    color: #FFF; }
 
 /**
  * Plugin styles

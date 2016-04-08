@@ -26,7 +26,7 @@
     }
 
     &__header {
-        @include rem(padding, 0 40px 0 0);
+        @include rem(padding, 0 65px 0 0);
         @include rem(font-size, 14px);
         position: relative;
     }

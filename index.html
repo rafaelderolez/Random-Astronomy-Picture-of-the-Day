@@ -29,15 +29,22 @@
     <div class="loader">
         <p class="loading">Loading<span>.</span><span>.</span><span>.</span></p>
     </div>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/about.html">About</a>
+            </li>
+        </ul>
+    </nav>
     <div class="main-container"></div>
 
     <footer>
         <div class="inner">
             <ul class="external__links">
-                <li class="external__links__link">
-                    <a href="#">About</a>
-                </li>
-                <li class="external__links__link">
+                <li class="external__link">
                     Side-project by <a target="_blank" href="http://rafaelderolez.be">Rafael Derolez</a>
                 </li>
             </ul>
@@ -50,13 +57,11 @@
         <div class="apod__desc">
             <header class="apod__header">
                 <div class="expand <% if(options.descriptionVisible) { %>expand--active<% } %>"></div>
-                <div class="download"><a href="<%= model.hdurl %>" download="<%= model.title %>"></a></div>
-                <p class="date glitch">
-                    <%= model.date %>
-                </p>
-                <p class="title glitch">
-                    <%= model.title %>
-                </p>
+                <div class="download">
+                    <a href="<%= model.hdurl %>" download="<%= model.title %>"></a>
+                </div>
+                <p class="date glitch"><%= model.date %></p>
+                <p class="title glitch"><%= model.title %></p>
             </header>
             <section class="apod__read-more" style="<% if(options.descriptionVisible) { %>height: auto;<% } %>">
                 <p class="description">
@@ -83,8 +88,8 @@
 
     <script src="./javascript/models/model.js"></script>
 
-    <script src="./javascript/views/apod-item.js"></script>
     <script src="./javascript/views/home.js"></script>
+    <script src="./javascript/views/apod-item.js"></script>
 
 </body>
 

@@ -16,10 +16,9 @@ var App = {
             if (!_this.home) {
                 _this.home = new App.Views.Home();
                 _this.currentView = _this.home;
+                _this.currentView.render();
             }
         });
-
-        // Backbone.history.start({ pushState: true, hashChange: false });
 
         Backbone.history.start();
     },

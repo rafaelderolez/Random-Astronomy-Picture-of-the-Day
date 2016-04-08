@@ -1,0 +1,27 @@
+nav {
+    position: fixed;
+    z-index: 10;
+    top: 55px;
+    right: 40px;
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+        float: left;
+
+        &:nth-child(1) {
+            margin-right: 15px;
+        }
+    }
+
+    a {
+        @include rem(font-size, 14px);
+        font-family: $alt-font;
+        font-weight: 500;
+        color: #FFF;
+    }
+}
