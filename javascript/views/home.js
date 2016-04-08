@@ -55,13 +55,7 @@ App.Views.Home = Backbone.View.extend({
         }
 
         var _this = this;
-        var $newApodBtn = $('.new-apod');
         var $apod = $('.apod');
-
-        $newApodBtn.addClass('animate');
-        setTimeout(function() {
-            $newApodBtn.removeClass('animate');
-        }, 400);
 
         this.removeApodView();
         this.renderApod();
@@ -71,6 +65,13 @@ App.Views.Home = Backbone.View.extend({
 
     onNewApodBtClick: function() {
         var _this = this;
+
+        var $newApodBtn = $('.new-apod');
+        $newApodBtn.addClass('animate');
+        setTimeout(function() {
+            $newApodBtn.removeClass('animate');
+        }, 400);
+
         this.randomApod.fetch({
             success: function() {
                 _this.getNewApod();
@@ -93,7 +94,12 @@ App.Views.Home = Backbone.View.extend({
         this.isDescriptionVisible = this.isDescriptionVisible ? false : true;
     },
 
-    onAboutClick: function() {
+    onAboutClick: function(ev) {
+        ev.preventDefault();
+        this.renderAbout();
+    },
+
+    renderAbout: function() {
         if (this.isAboutVisible == false) {
             // Remove Apod
             this.removeApodView();
@@ -111,7 +117,6 @@ App.Views.Home = Backbone.View.extend({
         } else {
             return false;
         }
-
-    },
+    }
 
 });
