@@ -24,18 +24,10 @@ html {
  * Base styles
  */
 /**
- * Base styles ~ Colours
- */
+* Custom styles ~ Colours
+*/
 /**
- * Add custom colours and their respective classes, ie:
- *
- * $colour-red: #E23C3C;
- *
- * %red,
- * .red {
- *     color: $colour-red;
- * }
- *
+ * Base styles ~ Colours
  */
 /**
  * Base styles ~ Easings
@@ -454,7 +446,7 @@ h6,
   line-height: 15.8px; }
 
 a {
-  color: #939393;
+  color: #FFF;
   text-decoration: none; }
 
 p {
@@ -562,9 +554,9 @@ ul.no-list-style {
     -webkit-animation-name: slowZoom;
     -moz-animation-name: slowZoom;
     animation-name: slowZoom;
-    -webkit-animation-duration: 100s;
-    -moz-animation-duration: 100s;
-    animation-duration: 100s;
+    -webkit-animation-duration: 80s;
+    -moz-animation-duration: 80s;
+    animation-duration: 80s;
     -webkit-animation-timing-function: ease;
     -moz-animation-timing-function: ease;
     animation-timing-function: ease;
@@ -582,7 +574,7 @@ ul.no-list-style {
     margin: 20px;
     margin: 2rem;
     background-color: rgba(26, 32, 38, 0.9);
-    color: #F7F7F7;
+    color: #f2f2f2;
     max-height: calc(100% - 110px);
     width: 480px;
     max-width: 100%;
@@ -618,40 +610,40 @@ ul.no-list-style {
     font-size: 1.3rem;
     line-height: 1.618;
     font-weight: 100;
-    color: #F7F7F7; }
+    color: #f2f2f2; }
   .box a {
     color: #FFF;
     text-decoration: underline; }
 
 @-webkit-keyframes slowZoom {
   0% {
-    -webkit-transform: scale(1); }
+    -webkit-transform: scale(1) rotate(0deg); }
   50% {
-    -webkit-transform: scale(1.1); }
+    -webkit-transform: scale(1.1) rotate(6deg); }
   100% {
     -webkit-transform: scale(1); } }
 
 @-moz-keyframes slowZoom {
   0% {
-    -moz-transform: scale(1); }
+    -moz-transform: scale(1) rotate(0deg); }
   50% {
-    -moz-transform: scale(1.1); }
+    -moz-transform: scale(1.1) rotate(6deg); }
   100% {
     -moz-transform: scale(1); } }
 
 @keyframes slowZoom {
   0% {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1); }
+    -webkit-transform: scale(1) rotate(0deg);
+    -moz-transform: scale(1) rotate(0deg);
+    -ms-transform: scale(1) rotate(0deg);
+    -o-transform: scale(1) rotate(0deg);
+    transform: scale(1) rotate(0deg); }
   50% {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1); }
+    -webkit-transform: scale(1.1) rotate(6deg);
+    -moz-transform: scale(1.1) rotate(6deg);
+    -ms-transform: scale(1.1) rotate(6deg);
+    -o-transform: scale(1.1) rotate(6deg);
+    transform: scale(1.1) rotate(6deg); }
   100% {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
@@ -766,6 +758,10 @@ ul.no-list-style {
   animation-delay: 0.4s; }
 
 footer {
+  background: -moz-linear-gradient(top, rgba(16, 19, 23, 0) 0%, rgba(16, 19, 23, 0.6) 100%);
+  background: -webkit-linear-gradient(top, rgba(16, 19, 23, 0) 0%, rgba(16, 19, 23, 0.6) 100%);
+  background: linear-gradient(to bottom, rgba(16, 19, 23, 0) 0%, rgba(16, 19, 23, 0.6) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#00ffffff', endColorstr='#1a2026',GradientType=0 );
   position: absolute;
   z-index: 5;
   color: #FFF;
@@ -779,31 +775,20 @@ footer {
     padding: 0;
     margin: 0; }
     footer .external__links__link {
-      float: left;
-      list-style: none;
-      font-family: "Rubik", sans-serif;
       font-size: 16px;
       font-size: 1.6rem;
       margin: 16px 0;
       margin: 1.6rem 0;
-      color: #F7F7F7;
-      font-weight: 500; }
+      font-family: "Rubik", sans-serif;
+      font-weight: 500;
+      color: #FFF;
+      list-style: none;
+      float: left; }
       footer .external__links__link:nth-of-type(2) {
         float: right; }
-        footer .external__links__link:nth-of-type(2) a {
-          position: relative; }
-          footer .external__links__link:nth-of-type(2) a:after {
-            content: " ";
-            width: 100%;
-            height: 1px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            background-color: #fff; }
-      footer .external__links__link a {
-        color: #F7F7F7; }
-      footer .external__links__link * {
-        margin: 0; }
+      footer .external__links__link svg {
+        width: 20px;
+        height: 20px; }
   footer .inner {
     display: block;
     margin: 20px;

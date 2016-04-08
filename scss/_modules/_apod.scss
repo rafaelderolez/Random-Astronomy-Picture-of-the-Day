@@ -5,7 +5,7 @@
     &--about {
         .box__media {
             @include animation-name(slowZoom);
-            @include animation-duration(100s);
+            @include animation-duration(80s);
             @include animation-timing-function(ease);
             @include animation-iteration-count(infinite);
             width: 100%;
@@ -17,8 +17,8 @@
         @include transition(all 0.3s ease);
         @include rem(padding, 20px);
         @include rem(margin, 20px);
-        background-color: rgba(26, 32, 38, 0.9);
-        color: #F7F7F7;
+        background-color: rgba($asphalt, 0.9);
+        color: darken($white, 5%);
         max-height: calc(100% - 110px);
         width: 480px;
         max-width: 100%;
@@ -61,22 +61,22 @@
             @include rem(font-size, 13px);
             line-height: 1.618;
             font-weight: 100;
-            color: #F7F7F7;
+            color: darken($white, 5%);
         }
     }
 
     a {
-        color: #FFF;
+        color: $white;
         text-decoration: underline;
     }
 }
 @include keyframes(slowZoom) {
     0% {
-        @include transform(scale(1));
+        @include transform(scale(1) rotate(0deg));
     }
 
     50% {
-        @include transform(scale(1.1));
+        @include transform(scale(1.1) rotate(6deg));
     }
 
     100% {
