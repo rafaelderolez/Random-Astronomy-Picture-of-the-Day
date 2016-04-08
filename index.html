@@ -29,22 +29,16 @@
     <div class="loader">
         <p class="loading">Loading<span>.</span><span>.</span><span>.</span></p>
     </div>
-    <nav>
-        <ul>
-            <li>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="/about.html">About</a>
-            </li>
-        </ul>
-    </nav>
+
     <div class="main-container"></div>
 
     <footer>
         <div class="inner">
             <ul class="external__links">
-                <li class="external__link">
+                <li class="external__links__link">
+                    <a data-about href="#">About</a>
+                </li>
+                <li class="external__links__link">
                     Side-project by <a target="_blank" href="http://rafaelderolez.be">Rafael Derolez</a>
                 </li>
             </ul>
@@ -74,6 +68,18 @@
         </div>
     </script>
 
+    <script id="tplAbout" type="text/template">
+        <div class="apod__media lazy" data-original="" style=""></div>
+        <div class="apod__desc">
+            <header class="apod__header">
+                <p>About</p>
+            </header>
+            <section>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, sed. Laborum assumenda ratione, fugit. Quos iusto molestias sint, ad iste modi quo, consequuntur reiciendis quibusdam laboriosam temporibus adipisci itaque, expedita.
+            </section>
+        </div>
+    </script>
+
     <!-- Initialize JS Plugins/Shims -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/underscore/underscore-min.js"></script>
@@ -90,6 +96,7 @@
 
     <script src="./javascript/views/home.js"></script>
     <script src="./javascript/views/apod-item.js"></script>
+    <script src="./javascript/views/about.js"></script>
 
 </body>
 

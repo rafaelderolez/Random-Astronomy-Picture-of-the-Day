@@ -5,7 +5,8 @@ App.Views.Home = Backbone.View.extend({
 
     events: {
         'click .new-apod': 'onNewApodBtClick',
-        'click .expand': 'onExpandBtClick'
+        'click .expand': 'onExpandBtClick',
+        'click [data-about]': 'onAboutClick'
     },
 
     /**
@@ -15,6 +16,7 @@ App.Views.Home = Backbone.View.extend({
         var _this = this;
 
         this.isDescriptionVisible = false;
+        this.isAboutVisible = false;
     },
 
     fadeIn: function() {
@@ -47,6 +49,11 @@ App.Views.Home = Backbone.View.extend({
     },
 
     getNewApod: function() {
+        // write IF for this removal
+        if (this.isAboutVisible == true) {
+            this.removeAboutView();
+        }
+
         var _this = this;
         var $newApodBtn = $('.new-apod');
         var $apod = $('.apod');
@@ -56,7 +63,7 @@ App.Views.Home = Backbone.View.extend({
             $newApodBtn.removeClass('animate');
         }, 400);
 
-        this.apodSubView.remove();
+        this.removeApodView();
         this.renderApod();
 
         return this;
@@ -71,8 +78,40 @@ App.Views.Home = Backbone.View.extend({
         });
     },
 
+    removeApodView: function() {
+        this.apodSubView.remove();
+    },
+
+    removeAboutView: function() {
+        this.aboutView.remove();
+
+        //Set isAboutVisible to false
+        this.isAboutVisible = false;
+    },
+
     onExpandBtClick: function() {
         this.isDescriptionVisible = this.isDescriptionVisible ? false : true;
+    },
+
+    onAboutClick: function() {
+        if (this.isAboutVisible == false) {
+            // Remove Apod
+            this.removeApodView();
+
+            // Render About view
+            var $tempEl = $(document.createDocumentFragment());
+            this.aboutView = new App.Views.Home.About();
+            $tempEl.append(this.aboutView.render().el);
+
+            // Append About view to .main-container
+            this.$('.main-container').append($tempEl);
+
+            //Set isAboutVisible to true
+            this.isAboutVisible = true;
+        } else {
+            return false;
+        }
+
     },
 
 });

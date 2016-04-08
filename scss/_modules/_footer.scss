@@ -12,40 +12,47 @@ footer {
         width: 100%;
         padding: 0;
         margin: 0;
-    }
 
-    .external__link {
-        @include rem(font-size, 14px);
-        @include rem(margin, 16px 0);
-        float: right;
-        list-style: none;
-        font-family: $alt-font;
-        color: #F7F7F7;
-        font-weight: 500;
+        &__link {
+            float: left;
+            list-style: none;
+            font-family: $alt-font;
+            @include rem(font-size, 16px);
+            @include rem(margin, 16px 0);
+            color: #F7F7F7;
+            font-weight: 500;
 
-        a {
-            color: #FFF;
-            position: relative;
+            &:nth-of-type(2) {
+                float: right;
 
-            &:after {
-                content: " ";
-                width: 100%;
-                height: 1px;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                background-color: #fff;
+                a {
+                    position: relative;
+
+                    &:after {
+                        content: " ";
+                        width: 100%;
+                        height: 1px;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background-color: #fff;
+                    }
+                }
             }
-        }
 
-        * {
-            margin: 0;
+            a {
+                color: #F7F7F7;
+            }
+
+            * {
+                margin: 0;
+            }
         }
     }
 
     .inner {
         @include row();
-        margin: 20px 40px;
+        margin: 20px;
         position: relative;
         text-align: center;
     }
