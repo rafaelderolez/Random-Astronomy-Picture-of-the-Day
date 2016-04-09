@@ -3,26 +3,21 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index: 30;
+    z-index: 1;
     top: 0;
     left: 0;
-    background: #1A2026;
-
-    &--hidden {
-        opacity: 0;
-        pointer-events: none;
-    }
+    background-color: darken($asphalt, 2%);
 }
 
 .loading {
-    @include rem(font-size, 16px);
+    @include rem(font-size, 32px);
     @include rem(margin, 0px);
     @include display(flex);
     @include align-items(center);
     @include justify-content(center);
     width: 100%;
     height: 100%;
-    color: #FFF;
+    color: $white;
 
     span {
         @include animation-name(blink);

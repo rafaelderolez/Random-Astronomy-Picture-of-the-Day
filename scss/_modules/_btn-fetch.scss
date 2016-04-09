@@ -3,13 +3,14 @@
     @include rem(margin, 0 auto);
     @include rem(font-size, 18px);
     padding: 0;
-    background-color: #1A2026;
-    color: #F7F7F7;
+    background-color: $asphalt;
+    color: $white;
     outline: none;
-    border: 0;
+    border: none;
+    overflow: hidden;
 
     &:hover {
-        background-color: lighten(#1A2026, 5%);
+        background-color: lighten($asphalt, 5%);
     }
 
     .fa-space-shuttle {
@@ -26,6 +27,7 @@
 
     &.animate {
         pointer-events: none;
+
         .fa-space-shuttle:before {
             @include animation-name(rocket-slide);
             @include animation-iteration-count(1);

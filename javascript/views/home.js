@@ -19,16 +19,9 @@ App.Views.Home = Backbone.View.extend({
         this.isAboutVisible = false;
     },
 
-    fadeIn: function() {
-        var $loader = $('.loader');
-        $loader.addClass('loader--hidden');
-
-    },
-
     render: function() {
         this.randomApod = new App.Models.PhotoModel();
         this.randomApod.fetch().done(
-            this.fadeIn.bind(this),
             this.renderApod.bind(this)
         );
     },
@@ -71,7 +64,7 @@ App.Views.Home = Backbone.View.extend({
         $newApodBtn.addClass('animate');
         setTimeout(function() {
             $newApodBtn.removeClass('animate');
-        }, 400);
+        }, 1000);
 
         this.randomApod.fetch({
             success: function() {

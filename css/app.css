@@ -503,7 +503,7 @@ html {
 
 body {
   position: relative;
-  background-color: #101317;
+  background-color: #161b20;
   color: #333333;
   width: 100%;
   height: 100%; }
@@ -660,17 +660,14 @@ ul.no-list-style {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 30;
+  z-index: 1;
   top: 0;
   left: 0;
-  background: #1A2026; }
-  .loader--hidden {
-    opacity: 0;
-    pointer-events: none; }
+  background-color: #161b20; }
 
 .loading {
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 32px;
+  font-size: 3.2rem;
   margin: 0px;
   margin: 0rem;
   display: -webkit-box;
@@ -865,9 +862,10 @@ footer {
   font-size: 1.8rem;
   padding: 0;
   background-color: #1A2026;
-  color: #F7F7F7;
+  color: #FFF;
   outline: none;
-  border: 0; }
+  border: none;
+  overflow: hidden; }
   .new-apod:hover {
     background-color: #242d35; }
   .new-apod .fa-space-shuttle {
