@@ -1,19 +1,18 @@
 .expand {
     @include transform(translateY(-50%));
-    position: relative;
+    position: absolute;
     top: 50%;
     right: 12px;
     width: 12px;
     height: 12px;
     cursor: pointer;
-    position: absolute;
 
     &:after,
     &:before {
         width: 100%;
         height: 1px;
+        background-color: $white;
         position: absolute;
-        background-color: #FFF;
         top: 6px;
         content: " ";
     }

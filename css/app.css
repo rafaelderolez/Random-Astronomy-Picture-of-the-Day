@@ -903,18 +903,17 @@ footer {
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
-  position: relative;
+  position: absolute;
   top: 50%;
   right: 12px;
   width: 12px;
   height: 12px;
-  cursor: pointer;
-  position: absolute; }
+  cursor: pointer; }
   .expand:after, .expand:before {
     width: 100%;
     height: 1px;
-    position: absolute;
     background-color: #FFF;
+    position: absolute;
     top: 6px;
     content: " "; }
   .expand:after {
