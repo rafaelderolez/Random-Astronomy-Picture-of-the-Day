@@ -91,8 +91,6 @@ App.Views.Home.ApodItem = Backbone.View.extend({
             options: this.options
         }));
 
-        this.toggleScrolling();
-
         return this;
     },
 

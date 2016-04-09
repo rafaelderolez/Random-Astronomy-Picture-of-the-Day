@@ -46,6 +46,7 @@ App.Views.Home = Backbone.View.extend({
         $tempEl.append(this.apodSubView.render().el);
         this.$('.main-container').append($tempEl);
         this.apodSubView.viewDidRender();
+        this.apodSubView.toggleScrolling();
     },
 
     getNewApod: function() {
