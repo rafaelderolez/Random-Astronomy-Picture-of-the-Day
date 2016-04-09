@@ -80,11 +80,11 @@ App.Views.Home = Backbone.View.extend({
     },
 
     removeApodView: function() {
-        this.apodSubView.remove();
+        this.apodSubView.closeView();
     },
 
     removeAboutView: function() {
-        this.aboutView.remove();
+        this.aboutView.closeView();
 
         //Set isAboutVisible to false
         this.isAboutVisible = false;
