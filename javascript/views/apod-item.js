@@ -20,6 +20,7 @@ App.Views.Home.ApodItem = Backbone.View.extend({
     initialize: function(datas) {
         this.options = datas.options;
         this.parent = datas.options.parent;
+        $(window).on('resize', this.toggleScrolling);
     },
 
     expandApodDescription: function(ev) {
@@ -35,11 +36,21 @@ App.Views.Home.ApodItem = Backbone.View.extend({
         if (this.isExpanded == true) {
             TweenMax.to($readMore, 0.4, {
                 height: 0,
-                ease: Sine.easeInOut
+                ease: Sine.easeInOut,
+
+                onCompleteScope: this,
+                onComplete: function() {
+                    this.toggleScrolling();
+                },
             });
         } else {
             TweenMax.set($readMore, {
-                height: 'auto'
+                height: 'auto',
+
+                onCompleteScope: this,
+                onComplete: function() {
+                    this.toggleScrolling();
+                },
             });
             TweenMax.from($readMore, 0.4, {
                 height: 0,
@@ -80,6 +91,8 @@ App.Views.Home.ApodItem = Backbone.View.extend({
             options: this.options
         }));
 
+        this.toggleScrolling();
+
         return this;
     },
 
@@ -92,7 +105,21 @@ App.Views.Home.ApodItem = Backbone.View.extend({
         this.matrixFade();
     },
 
+    toggleScrolling: function() {
+        var $box = $('.box__content');
+        var boxMargin = 20;
+        var $boxHeight = $('.box__content').outerHeight();
+        var $footerHeight = $('footer').outerHeight();
+        var $windowHeight = $(window).height();
+        if ($windowHeight - boxMargin - $footerHeight <= $boxHeight) {
+            $box.addClass('box__content--scroll');
+        } else {
+            $box.removeClass('box__content--scroll');
+        }
+    },
+
     closeView: function() {
+        $(window).off('resize', this.toggleScrolling);
         this.remove();
     },
 });

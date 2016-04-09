@@ -575,16 +575,18 @@ ul.no-list-style {
     margin: 2rem;
     background-color: rgba(26, 32, 38, 0.9);
     color: #f2f2f2;
-    max-height: calc(100% - 110px);
+    max-height: 100%;
     width: 480px;
     max-width: 100%;
     line-height: 1.618;
     position: absolute;
-    overflow: scroll;
     z-index: 10; }
     @media screen and (max-width: 520px) {
       .box__content {
         width: calc(100% - 40px); } }
+    .box__content--scroll {
+      overflow-y: scroll;
+      max-height: calc(100% - 110px); }
   .box__header {
     padding: 0 65px 0 0;
     padding: 0 6.5rem 0 0;
@@ -602,7 +604,7 @@ ul.no-list-style {
     background-position: center center; }
   .box__read-more {
     height: 0;
-    overflow: scroll; }
+    overflow: hidden; }
   .box section p {
     margin: 10px 0;
     margin: 1rem 0;

@@ -19,15 +19,19 @@
         @include rem(margin, 20px);
         background-color: rgba($asphalt, 0.9);
         color: darken($white, 5%);
-        max-height: calc(100% - 110px);
+        max-height: 100%;
         width: 480px;
         max-width: 100%;
         line-height: 1.618;
         position: absolute;
-        overflow: scroll;
         z-index: 10;
         @include media(max-width 520px) {
             width: calc(100% - 40px);
+        }
+
+        &--scroll {
+            overflow-y: scroll;
+            max-height: calc(100% - 110px);
         }
     }
 
@@ -52,7 +56,7 @@
 
     &__read-more {
         height: 0;
-        overflow: scroll;
+        overflow: hidden;
     }
 
     section {
