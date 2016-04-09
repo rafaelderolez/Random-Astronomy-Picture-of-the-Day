@@ -17,13 +17,28 @@ App.Views.Home = Backbone.View.extend({
 
         this.isDescriptionVisible = false;
         this.isAboutVisible = false;
+        this.hasRenderedApod = false;
     },
 
     render: function() {
         this.randomApod = new App.Models.PhotoModel();
-        this.randomApod.fetch().done(
-            this.renderApod.bind(this)
-        );
+        this.fetchApod();
+    },
+
+    fetchApod: function() {
+        var _this = this;
+        this.randomApod.fetch({
+            success: function() {
+                console.log('success!');
+                _this.getNewApod();
+            },
+            error: function() {
+                setTimeout(function() {
+                    console.log('error!');
+                    _this.fetchApod();
+                }, 1);
+            }
+        });
     },
 
     renderApod: function() {
@@ -40,18 +55,21 @@ App.Views.Home = Backbone.View.extend({
         this.$('.main-container').append($tempEl);
         this.apodSubView.viewDidRender();
         this.apodSubView.toggleScrolling();
+
+        this.hasRenderedApod = true;
     },
 
     getNewApod: function() {
-        // write IF for this removal
         if (this.isAboutVisible == true) {
             this.removeAboutView();
         }
 
-        var _this = this;
-        var $apod = $('.apod');
+        console.log(this.hasRenderedApod);
 
-        this.removeApodView();
+        if (this.hasRenderedApod == true) {
+            this.removeApodView();
+        };
+
         this.renderApod();
 
         return this;
@@ -66,11 +84,7 @@ App.Views.Home = Backbone.View.extend({
             $newApodBtn.removeClass('animate');
         }, 1000);
 
-        this.randomApod.fetch({
-            success: function() {
-                _this.getNewApod();
-            }
-        });
+        this.fetchApod();
     },
 
     removeApodView: function() {
