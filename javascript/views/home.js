@@ -1,7 +1,6 @@
 App.Views.Home = Backbone.View.extend({
 
     el: 'body',
-    model: App.Models.PhotoModel,
 
     events: {
         'click .new-apod': 'onNewApodBtClick',
@@ -21,7 +20,7 @@ App.Views.Home = Backbone.View.extend({
     },
 
     render: function() {
-        this.randomApod = new App.Models.PhotoModel();
+        this.randomApod = new App.Models.ApodModel();
         this.fetchApod();
     },
 
@@ -29,16 +28,24 @@ App.Views.Home = Backbone.View.extend({
         var _this = this;
         this.randomApod.fetch({
             success: function() {
-                console.log('success!');
-                _this.getNewApod();
+                _this.preRenderCheck();
             },
             error: function() {
                 setTimeout(function() {
-                    console.log('error!');
                     _this.fetchApod();
                 }, 1);
             }
         });
+    },
+
+    preRenderCheck: function() {
+        if (this.isAboutVisible == true) {
+            this.removeAboutView();
+        } else if (this.hasRenderedApod == true) {
+            this.removeApodView();
+        };
+
+        this.renderApod();
     },
 
     renderApod: function() {
@@ -57,22 +64,6 @@ App.Views.Home = Backbone.View.extend({
         this.apodSubView.toggleScrolling();
 
         this.hasRenderedApod = true;
-    },
-
-    getNewApod: function() {
-        if (this.isAboutVisible == true) {
-            this.removeAboutView();
-        }
-
-        console.log(this.hasRenderedApod);
-
-        if (this.hasRenderedApod == true) {
-            this.removeApodView();
-        };
-
-        this.renderApod();
-
-        return this;
     },
 
     onNewApodBtClick: function() {

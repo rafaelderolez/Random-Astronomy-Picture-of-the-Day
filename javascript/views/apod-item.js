@@ -23,6 +23,15 @@ App.Views.Home.ApodItem = Backbone.View.extend({
         $(window).on('resize', this.toggleScrolling);
     },
 
+    render: function() {
+        this.$el.html(this.template({
+            model: this.model.attributes,
+            options: this.options
+        }));
+
+        return this;
+    },
+
     expandApodDescription: function(ev) {
         var _this = this;
 
@@ -85,14 +94,6 @@ App.Views.Home.ApodItem = Backbone.View.extend({
         }, 5);
     },
 
-    render: function() {
-        this.$el.html(this.template({
-            model: this.model.attributes,
-            options: this.options
-        }));
-
-        return this;
-    },
 
     viewDidRender: function() {
         $('.lazy').lazyload({
