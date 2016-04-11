@@ -14,7 +14,7 @@
     }
 
     &__content {
-        @include transition(all 0.3s ease);
+        @include transition(height 0.3s ease);
         @include rem(padding, 20px);
         @include rem(margin, 20px);
         background-color: rgba($asphalt, 0.9);
