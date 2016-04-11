@@ -26,8 +26,6 @@
     }
 
     &.animate {
-        pointer-events: none;
-
         .fa-space-shuttle:before {
             @include animation-name(rocket-slide);
             @include animation-iteration-count(1);

@@ -879,21 +879,19 @@ footer {
     overflow: hidden; }
     .new-apod .fa-space-shuttle:before {
       display: block; }
-  .new-apod.animate {
-    pointer-events: none; }
-    .new-apod.animate .fa-space-shuttle:before {
-      -webkit-animation-name: rocket-slide;
-      -moz-animation-name: rocket-slide;
-      animation-name: rocket-slide;
-      -webkit-animation-iteration-count: 1;
-      -moz-animation-iteration-count: 1;
-      animation-iteration-count: 1;
-      -webkit-animation-timing-function: ease;
-      -moz-animation-timing-function: ease;
-      animation-timing-function: ease;
-      -webkit-animation-duration: 0.4s;
-      -moz-animation-duration: 0.4s;
-      animation-duration: 0.4s; }
+  .new-apod.animate .fa-space-shuttle:before {
+    -webkit-animation-name: rocket-slide;
+    -moz-animation-name: rocket-slide;
+    animation-name: rocket-slide;
+    -webkit-animation-iteration-count: 1;
+    -moz-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-duration: 0.4s;
+    -moz-animation-duration: 0.4s;
+    animation-duration: 0.4s; }
 
 .expand {
   -webkit-transform: translateY(-50%);
