@@ -1,5 +1,5 @@
 # Random APOD Generator
-This is a simple little web app that generates an APOD (Astronomy Picture of the Day) from NASA's APOD [Archives]
+This is a simple little web app that generates an APOD (Astronomy Picture of the Day) from NASA's APOD Archives.
 
 ## Version
 1.0
