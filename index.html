@@ -62,7 +62,7 @@
             <header class="box__header">
                 <div class="expand <% if(options.descriptionVisible) { %>expand--active<% } %>"></div>
                 <div class="download">
-                    <a href="<%= model.hdurl %>" download="<%= model.title %>"></a>
+                    <a title="Download" href="<%= model.hdurl %>" download="<%= model.title %>"></a>
                 </div>
                 <p class="date glitch"><%= model.date %></p>
                 <p class="title glitch"><%= model.title %></p>
@@ -82,20 +82,20 @@
         <div class="box__media lazy" data-original="images/space.jpg" style=""></div>
         <div class="box__content">
             <section>
-                <p>This little web app generates a random <a target="_blank" href="http://apod.nasa.gov/apod/astropix.html">APOD</a> (Astronomy Picture Of the Day) from NASA's archives.</p>
-                <p>I'll be writing a more extensive blog post on <a target="_blank" href="http://neverbland.com/news">our Blog</a> explaining why and how I built this, but if you're eager to find out, go have a look at the code <a target="_blank" href="http://github.com/rafaelderolez/random-apod-generator">on Github</a>.</p>
-                <p>Side-project by <a target="_blank" href="http://rafaelderolez.be">Rafael Derolez</a></p>
+                <p>I made this some time ago ago to get familiar with Backbone.js. It generates a random <a target="_blank" href="http://apod.nasa.gov/apod/astropix.html">APOD</a> (Astronomy Picture Of the Day) from NASA's archives.</p>
+                <p>Some of the images make for pretty nice wallpapers. Code's available <a target="_blank" href="http://github.com/rafaelderolez/random-apod-generator">on Github</a>.</p>
+                <p><small>Side-project by <a target="_blank" href="http://rafaelderolez.be">Rafael Derolez</a></small></p>
             </section>
         </div>
 
     </script>
 
     <!-- Initialize JS Plugins/Shims -->
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="./node_modules/underscore/underscore-min.js"></script>
-    <script src="./node_modules/backbone/backbone-min.js"></script>
-    <script src="./node_modules/jquery-lazyload/jquery.lazyload.js"></script>
-    <script src="./node_modules/gsap/src/minified/Tweenmax.min.js"></script>
+    <script src="./javascript/vendors/jquery.min.js"></script>
+    <script src="./javascript/vendors/underscore-min.js"></script>
+    <script src="./javascript/vendors/backbone-min.js"></script>
+    <script src="./javascript/vendors/jquery.lazyload.js"></script>
+    <script src="./javascript/vendors/TweenMax.min.js"></script>
 
     <script src="./javascript/app.js"></script>
 
