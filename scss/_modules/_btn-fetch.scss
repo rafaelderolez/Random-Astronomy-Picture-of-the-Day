@@ -3,14 +3,16 @@
     @include rem(margin, 0 auto);
     @include rem(font-size, 18px);
     padding: 0;
-    background-color: $asphalt;
-    color: $white;
+    background-color: $white;
+    color: $asphalt;
     outline: none;
     border: none;
     overflow: hidden;
+    border-radius: 2px;
 
     &:hover {
-        background-color: lighten($asphalt, 5%);
+        background-color: lighten($white, 5%);
+        transform: scale(1.05);
     }
 
     .fa-space-shuttle {
